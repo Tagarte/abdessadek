@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0e1a">
+  <meta name="color-scheme" content="dark light">
+
+  <title>Abdessadek Tagarte </title>
+  <meta name="description" content="Portfolio d'Abdessadek Tagarte, étudiant en Master d'Excellence en Ingénierie Logicielle : projets Backend, Cloud et DevOps.">
+  <meta name="author" content="Abdessadek Tagarte">
+  <link rel="canonical" href="https://tagarte.github.io/abdessadek">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Abdessadek Tagarte — Software Engineering">
+  <meta property="og:description" content="Projets, compétences et parcours en développement logiciel, Backend, Cloud et DevOps.">
+  <meta property="og:url" content="https://tagarte.github.io/abdessadek">
+  <meta property="og:image" content="https://tagarte.github.io/assets/icons/og-image.png">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-fr="Aller au contenu" data-en="Skip to content">Aller au contenu</a>
+
+  <canvas id="starfield" class="starfield" aria-hidden="true"></canvas>
+
+  <div class="aurora" aria-hidden="true">
+    <span class="aurora-1"></span>
+    <span class="aurora-2"></span>
+    <span class="aurora-3"></span>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="#accueil" data-nav>
+      <span class="brand-mark" aria-hidden="true">AT</span>
+      <span class="brand-name">Abdessadek Tagarte</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Navigation principale">
+      <a href="#apropos"     data-nav data-fr="À propos"    data-en="About">À propos</a>
+      <a href="#competences" data-nav data-fr="Compétences" data-en="Skills">Compétences</a>
+      <a href="#projets"     data-nav data-fr="Projets"     data-en="Projects">Projets</a>
+      <a href="#experiences" data-nav data-fr="Expérience"  data-en="Experience">Expérience</a>
+      <a href="#formation"   data-nav data-fr="Formation"   data-en="Education">Formation</a>
+      <a href="#contact"     data-nav data-fr="Contact"     data-en="Contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-switcher" role="group" aria-label="Langue / Language">
+        <button class="lang-btn active" data-lang="fr" type="button" aria-pressed="true" aria-label="Passer en français">
+          <svg class="lang-flag" viewBox="0 0 24 16" aria-hidden="true" focusable="false">
+            <rect width="8" height="16" fill="#0055A4"/>
+            <rect x="8" width="8" height="16" fill="#fff"/>
+            <rect x="16" width="8" height="16" fill="#EF4135"/>
+          </svg>
+          <span class="lang-code">FR</span>
+        </button>
+        <button class="lang-btn" data-lang="en" type="button" aria-pressed="false" aria-label="Switch to English">
+          <svg class="lang-flag" viewBox="0 0 24 16" aria-hidden="true" focusable="false">
+            <rect width="24" height="16" fill="#012169"/>
+            <path d="M0 0l24 16M24 0L0 16" stroke="#fff" stroke-width="3"/>
+            <path d="M0 0l24 16M24 0L0 16" stroke="#C8102E" stroke-width="1.6"/>
+            <path d="M12 0v16M0 8h24" stroke="#fff" stroke-width="4"/>
+            <path d="M12 0v16M0 8h24" stroke="#C8102E" stroke-width="2.4"/>
+          </svg>
+          <span class="lang-code">EN</span>
+        </button>
+      </div>
+
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Activer le mode clair" aria-pressed="false">
+        <span id="themeIcon" aria-hidden="true">☀</span>
+      </button>
+
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Navigation mobile" hidden>
+      <a href="#apropos"     data-nav data-fr="À propos"    data-en="About">À propos</a>
+      <a href="#competences" data-nav data-fr="Compétences" data-en="Skills">Compétences</a>
+      <a href="#projets"     data-nav data-fr="Projets"     data-en="Projects">Projets</a>
+      <a href="#experiences" data-nav data-fr="Expérience"  data-en="Experience">Expérience</a>
+      <a href="#formation"   data-nav data-fr="Formation"   data-en="Education">Formation</a>
+      <a href="#contact"     data-nav data-fr="Contact"     data-en="Contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main" class="main-content" tabindex="-1">
+
+    <!-- ============ HERO ============ -->
+    <section id="accueil" class="hero">
+      <div class="hero-inner">
+        <p class="hero-tag">
+          <span class="hero-tag-dot" aria-hidden="true"></span>
+          <span data-fr="Disponible pour un stage PFE " data-en="Available for a final-year internship ">Disponible pour un stage PFE · 2026</span>
+        </p>
+
+        <h1 class="hero-title">
+          <span class="hero-line">Abdessadek</span>
+          <span class="hero-line hero-line-gradient">Tagarte</span>
+        </h1>
+
+        <p class="hero-role">
+          <span data-fr="Étudiant en Ingénierie Logicielle" data-en="Software Engineering Student">Étudiant en Ingénierie Logicielle</span>
+          <span class="hero-sep" aria-hidden="true">·</span>
+          <span data-fr="Backend · Cloud · DevOps" data-en="Backend · Cloud · DevOps">Backend · Cloud · DevOps</span>
+        </p>
+
+        <p class="hero-desc"
+           data-fr="Étudiant en Master d’Excellence Ingénierie Logicielle à l’Université Ibn Zohr, je m’intéresse à la conception d’architectures Backend robustes, aux systèmes distribués, au Cloud et à l’automatisation DevOps. Mon objectif : développer des solutions logicielles fiables, maintenables et performantes."
+           data-en="Master’s student in Software Engineering at Ibn Zohr University, with a strong interest in designing robust backend architectures, distributed systems, cloud computing, and DevOps automation. My goal is to build reliable, maintainable, and high-performance software solutions.">
+          Étudiant en Master d'Excellence en Ingénierie Logicielle à l'Université Ibn Zohr. J'explore les architectures Backend, les systèmes distribués, le Cloud et l'automatisation DevOps — avec une obsession : la qualité du code et la fiabilité.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#projets" data-nav>
+            <span data-fr="Explorer mes projets" data-en="Explore my projects">Explorer mes projets</span>
+            <span aria-hidden="true">→</span>
+          </a>
+          <a class="btn btn-ghost" href="assets/abdessadek_tagarte_cv_fr.pdf" download>
+            <span data-fr="Télécharger mon CV" data-en="Download my CV">Télécharger mon CV</span>
+            <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-orb" aria-hidden="true">
+        <div class="orb-core"></div>
+        <div class="orb-ring orb-ring-1"></div>
+        <div class="orb-ring orb-ring-2"></div>
+      </div>
+
+      <a href="#apropos" class="hero-scroll" aria-label="Faire défiler vers le bas" data-nav>
+        <span class="scroll-line"></span>
+        <span data-fr="Scroll" data-en="Scroll">Scroll</span>
+      </a>
+    </section>
+
+    <!-- ============ À PROPOS ============ -->
+    <section id="apropos" class="section">
+      <header class="section-header">
+        <span class="section-num">01</span>
+        <h2 class="section-title" data-fr="À propos" data-en="About">À propos</h2>
+        <p class="section-intro" data-fr="Du code à l'infrastructure, avec la même exigence." data-en="From code to infrastructure, with the same commitment.">Du code à l'infrastructure, avec la même exigence.</p>
+      </header>
+
+      <div class="about-grid">
+        <div class="glass-card about-copy">
+          <p data-fr="Mon parcours en ingénierie logicielle m'amène à explorer la conception d'API, les systèmes distribués et les pratiques qui rendent les applications plus simples à déployer et à maintenir."
+             data-en="My software engineering journey leads me to explore API design, distributed systems and practices that make applications simpler to deploy and maintain.">
+             Mon parcours en ingénierie logicielle m'amène à explorer la conception d'API, les systèmes distribués et les pratiques qui rendent les applications plus simples à déployer et à maintenir.
+          </p>
+          <p data-fr="J'aime apprendre en construisant : structurer un service, connecter des composants, automatiser les tâches répétitives et documenter les choix techniques."
+             data-en="I love learning by building: structuring a service, connecting components, automating repetitive tasks and documenting technical choices.">
+             J'aime apprendre en construisant : structurer un service, connecter des composants, automatiser les tâches répétitives et documenter les choix techniques.
+          </p>
+          <p data-fr="Je recherche un stage PFE où contribuer à des projets concrets en développement logiciel, Backend, Cloud ou DevOps, tout en progressant au sein d'une équipe."
+             data-en="I'm looking for a final-year internship where I can contribute to real projects in software development, backend, cloud or DevOps, while growing within a team.">
+             Je recherche un stage PFE où contribuer à des projets concrets en développement logiciel, Backend, Cloud ou DevOps, tout en progressant au sein d'une équipe.
+          </p>
+        </div>
+
+        <div class="glass-card about-focus">
+          <h3 data-fr="Domaines d'intérêt" data-en="Areas of interest">Domaines d'intérêt</h3>
+          <ul class="focus-list">
+            <li>
+              <span class="focus-num">01</span>
+              <div>
+                <strong data-fr="Backend &amp; API" data-en="Backend &amp; API">Backend &amp; API</strong>
+                <p data-fr="Services robustes, contrats REST et données." data-en="Robust services, REST contracts and data.">Services robustes, contrats REST et données.</p>
+              </div>
+            </li>
+            <li>
+              <span class="focus-num">02</span>
+              <div>
+                <strong data-fr="Cloud &amp; DevOps" data-en="Cloud &amp; DevOps">Cloud &amp; DevOps</strong>
+                <p data-fr="Conteneurisation, automatisation et déploiement." data-en="Containerization, automation and deployment.">Conteneurisation, automatisation et déploiement.</p>
+              </div>
+            </li>
+            <li>
+              <span class="focus-num">03</span>
+              <div>
+                <strong data-fr="Systèmes distribués" data-en="Distributed systems">Systèmes distribués</strong>
+                <p data-fr="Communication entre services et télémétrie IoT." data-en="Service-to-service communication and IoT telemetry.">Communication entre services et télémétrie IoT.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COMPÉTENCES ============ -->
+    <section id="competences" class="section">
+      <header class="section-header">
+        <span class="section-num">02</span>
+        <h2 class="section-title" data-fr="Compétences" data-en="Skills">Compétences</h2>
+        <p class="section-intro" data-fr="Technologies utilisées ou étudiées dans mes projets." data-en="Technologies used or studied in my projects.">Technologies utilisées ou étudiées dans mes projets.</p>
+      </header>
+
+      <div class="skills-grid">
+        <!-- Backend -->
+        <article class="glass-card skill-card">
+          <span class="skill-icon" aria-hidden="true">{ }</span>
+          <h3 data-fr="Backend" data-en="Backend">Backend</h3>
+          <div class="tags">
+            <span data-tech="java"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.762.542.925c2.03.21 3.628.227 6.398-.309 0 0 .386.39.992.604-5.657 1.653-11.957.13-7.932-1.22M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.653 3.011-5.689 0 0-8.223 2.053-4.296 6.574M19.33 20.504s.679.559-.747.991c-2.712.822-11.288 1.069-13.669.033-.856-.373.75-.89 1.254-.999.527-.118.83-.098.83-.098-.954-.672-6.173 1.321-2.651 1.891 9.61 1.557 17.495-.701 14.983-1.818M9.292 13.21s-4.362 1.036-1.544 1.412c1.189.159 3.561.123 5.77-.062 1.806-.152 3.618-.477 3.618-.477s-.637.272-1.098.585c-4.429 1.165-12.986.623-10.522-.568 2.082-1.006 3.776-.89 3.776-.89M17.115 18.04c4.501-2.339 2.42-4.587.968-4.283-.356.074-.516.138-.516.138s.133-.208.386-.297c2.887-1.015 5.107 2.993-.943 4.561 0 0 .071-.063.105-.119"/></svg>Java</span>
+            <span data-tech="spring"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2.4a9.6 9.6 0 0 1 9.6 9.6 9.6 9.6 0 0 1-9.6 9.6A9.6 9.6 0 0 1 2.4 12 9.6 9.6 0 0 1 12 2.4zm-1.2 4.8v9.6l4.8-4.8-4.8-4.8z"/></svg>Spring Boot</span>
+            <span data-tech="python"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11.914 0C5.82 0 6.2 2.656 6.2 2.656l.007 2.752h5.814v.826H3.9S0 5.789 0 11.969c0 6.18 3.403 5.963 3.403 5.963h2.03v-2.868s-.109-3.403 3.35-3.403h5.766s3.24.052 3.24-3.133V3.234S18.31 0 11.914 0zm-3.21 1.943a1.086 1.086 0 1 1 0 2.172 1.086 1.086 0 0 1 0-2.172z"/><path fill="currentColor" d="M12.086 24c6.094 0 5.714-2.656 5.714-2.656l-.007-2.752h-5.814v-.826h8.121S24 18.211 24 12.031c0-6.18-3.403-5.963-3.403-5.963h-2.03v2.868s.109 3.403-3.35 3.403H9.451s-3.24-.052-3.24 3.133v5.294S5.69 24 12.086 24zm3.21-1.943a1.086 1.086 0 1 1 0-2.172 1.086 1.086 0 0 1 0 2.172z"/></svg>Python</span>
+            <span data-tech="fastapi"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0C5.375 0 0 5.375 0 12s5.375 12 12 12 12-5.375 12-12S18.625 0 12 0zm.768 3.354l-1.82 1.7v-.001l4.11 3.84-4.11 3.84 1.82 1.7 5.797-5.54-5.797-5.539zM5.41 12.7l-1.82-1.7 5.798-5.54 1.82 1.7-4.11 3.84 4.11 3.84-1.82 1.7L5.41 12.7z"/></svg>FastAPI</span>
+            <span data-tech="php"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.01 10.207h-.944l-.515 2.648h.838q.744 0 1.242-.314.497-.314.68-.999.182-.677-.102-.999-.284-.336-1.199-.336zm2.684-1.073H5.005l-1.314 6.768h1.234l.342-1.761h1.555q1.183 0 1.944-.633.76-.633 1.026-1.94.257-1.238-.36-1.833-.587-.6-1.738-.601zm6.224 4.982h1.068q.612 0 .985-.282.371-.281.563-.898.178-.585-.145-.874-.324-.29-.997-.29h-1.03zm-2.643 1.13h-1.017l.115-.594h1.051q.42 0 .665-.13.244-.13.331-.42.086-.272-.053-.396-.125-.123-.523-.13l-.983-.015.858-2.6h2.867l-.157.816h-1.886l-.244.757.977.015q.78.013 1.15.42.385.421.235 1.128-.164.777-.812 1.23-.633.45-1.756.45zm-4.01-2.962l-.244 1.282h-1.056l.244-1.282z"/></svg>PHP</span>
+            <span data-tech="laravel"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.642 5.43a.364.364 0 0 1 .014.1v5.149c0 .135-.073.26-.189.326l-4.323 2.49v4.934a.378.378 0 0 1-.188.326L9.93 23.949a.316.316 0 0 1-.066.027c-.008.002-.016.008-.024.01a.348.348 0 0 1-.192 0c-.011-.002-.02-.008-.03-.012-.02-.008-.042-.014-.062-.025L.533 18.755a.376.376 0 0 1-.189-.326V2.974c0-.033.005-.066.014-.098.003-.012.01-.02.014-.032a.369.369 0 0 1 .023-.058c.004-.013.015-.022.023-.033l.033-.045c.012-.01.025-.018.037-.027.014-.012.027-.024.041-.034H.53L5.043.05a.375.375 0 0 1 .375 0L9.93 2.647h.002c.015.01.027.021.04.033.01.01.024.017.035.027.013.014.022.03.033.045.008.011.02.021.025.033.01.02.017.038.024.058.003.011.01.021.013.032.01.031.014.064.014.098v9.652l3.76-2.164V5.527c0-.033.004-.066.013-.098.003-.01.01-.02.013-.032a.487.487 0 0 1 .024-.06c.005-.011.015-.02.024-.032l.033-.045c.012-.01.025-.018.037-.027.014-.012.027-.023.041-.032h.001l4.513-2.598a.375.375 0 0 1 .375 0l4.513 2.598c.016.01.027.021.042.034.01.008.022.016.03.027.013.014.023.029.034.044.008.012.02.022.025.034.01.018.017.038.024.057.003.012.01.022.013.034z"/></svg>Laravel</span>
+            <span>API REST</span>
+            <span>OpenAPI</span>
+          </div>
+        </article>
+
+        <!-- Frontend -->
+        <article class="glass-card skill-card">
+          <span class="skill-icon" aria-hidden="true">◫</span>
+          <h3 data-fr="Frontend" data-en="Frontend">Frontend</h3>
+          <div class="tags">
+            <span data-tech="html5"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/></svg>HTML5</span>
+            <span data-tech="css3"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.414z"/></svg>CSS3</span>
+            <span data-tech="js"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg>JavaScript</span>
+            <span data-tech="react"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565z"/></svg>React.js</span>
+          </div>
+        </article>
+
+        <!-- Bases de données -->
+        <article class="glass-card skill-card">
+          <span class="skill-icon" aria-hidden="true">▦</span>
+          <h3 data-fr="Bases de données" data-en="Databases">Bases de données</h3>
+          <div class="tags">
+            <span data-tech="postgres"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.5594 14.7228a.5269.5269 0 0 0-.0563-.1191c-.139-.2632-.4768-.3418-1.0074-.2321-1.6533.3411-2.2935.1312-2.5256-.0191-.4271-.2767-.6357-.7426-.6357-1.423 0-.8997.2182-2.0957.6382-3.4064.3176-1.0019.7745-2.0483 1.3243-3.0473.7327-1.3355.9885-2.1037.9022-2.4923-.0819-.3708-.4464-.4764-.7142-.4884-.4034-.0177-.7366.1877-.9618.5937-.3178.5741-.4646 1.3538-.4241 2.264.0987 2.0726-.5331 3.4966-1.6126 4.2521-.2619.1841-.5529.3584-.8649.5188-1.6692.8534-3.1923 1.0664-4.1303.3775-.2984-.2189-.6703-.2153-.9726.007-.2906.214-.4755.5761-.4755.9724 0 .3966.185.7584.4756.9727.2988.2237.6774.2262.9795.0065.8659-.6255 2.4049-.4362 3.9352.3448.5115.2584.9889.5799 1.4119.9569.4159.3699.7856.7824 1.0914 1.2193.525.7497.7872 1.4475.7936 1.9953.0055.499-.1648.904-.5133 1.2033-.3351.2887-.8135.4501-1.4224.4797-.6427.0315-1.3113-.1092-1.9945-.4188-.712-.3236-1.492-.7831-2.3191-1.36-.6226-.434-1.254-.8859-1.8784-1.3357a7.9296 7.9296 0 0 1-.6807-.5231c-.368-.3062-.7193-.5985-1.0333-.8522-.313-.2539-.5844-.4542-.7997-.5884-.1198-.0746-.2752-.1932-.4377-.3345-.2818-.2448-.5439-.5888-.7347-.9678-.1664-.3297-.2586-.6395-.2586-.865 0-.6961.5138-1.1144 1.4068-1.1494.3845-.0148.7235.0484.9966.1842.3235.1608.5774.3842.7521.6597.2077.3267.2893.6851.2402 1.0619-.0494.3788-.2219.7294-.4885 1.0422-.1583.186-.2131.3541-.1859.5647.0342.2613.1996.4832.4545.6034.1632.0765.3417.094.5023.0494.2442-.0663.4645-.2816.6231-.5927.2382-.4657.3596-1.0147.3596-1.6215 0-1.1915-.5041-2.2727-1.3877-2.9762-.872-.6948-2.0412-1.0114-3.2169-.8709-1.162.1393-2.1093.7573-2.6067 1.6967-.4633.8743-.5077 1.9556-.1224 2.9645.1859.4864.4647.9355.8261 1.3285.1914.2079.4027.4062.6279.5892.1906.1535.4897.3844.8882.6784.3497.2576.7258.5533 1.1183.8796 1.0451.8568 2.0053 1.5688 2.8546 2.0155.9092.4785 1.7221.7008 2.4894.6783.768-.0234 1.4512-.2884 2.0325-.7929.6017-.5231.9187-1.2305.9162-2.0455-.0036-.6883-.2188-1.4144-.6478-2.1846z"/></svg>PostgreSQL</span>
+            <span>TimescaleDB</span>
+            <span data-tech="mysql"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333-.04-.047-.046-.094-.08-.14-.04-.067-.126-.1-.18-.153zM5.77 18.695h-.927a50.854 50.854 0 0 0-.27-4.41h-.008l-1.41 4.41H2.45l-1.4-4.41h-.01a72.892 72.892 0 0 0-.195 4.41H0c.055-1.966.192-3.81.41-5.53h1.15l1.335 4.064h.008l1.347-4.064h1.095c.242 2.015.384 3.86.428 5.53zm4.017-4.08c-.378 2.045-.876 3.533-1.492 4.46-.482.716-1.01 1.073-1.583 1.073-.153 0-.34-.046-.566-.138v-.494c.11.017.24.026.386.026.268 0 .483-.075.647-.222.197-.18.295-.382.295-.605 0-.155-.077-.47-.23-.944L6.23 14.615h.91l.727 2.36c.164.536.233.91.205 1.123.4-1.064.678-2.227.835-3.483zm12.325 4.08h-2.63v-5.53h.885v4.85h1.745zm-3.32.135l-1.016-.5c.09-.076.177-.158.255-.25.433-.506.648-1.258.648-2.253 0-1.83-.718-2.746-2.155-2.746-.704 0-1.254.232-1.65.697-.43.508-.646 1.256-.646 2.245 0 .972.19 1.686.574 2.14.35.41.877.615 1.583.615.264 0 .506-.033.725-.098l1.325.772.36-.622z"/></svg>MySQL</span>
+            <span data-tech="mongo"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.634-.138-.81-.139-.893-.008-.041-.004-.074-.004-.074s.004-.03.012-.098c.02-.16.028-.324.028-.324s.394-1.09 1.387-2.297C15.87-1.135 18.593-.65 18.593-.65c3.257.24 5.694 2.017 5.694 2.017s-.133 2.302-1.63 4.192c-1.224 1.549-2.85 2.249-2.85 2.249s-.317.155-.851.372c-.237.096-.507.195-.754.286l-1.009-3.911z"/></svg>MongoDB</span>
+            <span>Oracle</span>
+          </div>
+        </article>
+
+        <!-- DevOps & Cloud -->
+        <article class="glass-card skill-card">
+          <span class="skill-icon" aria-hidden="true">⌘</span>
+          <h3 data-fr="DevOps &amp; Cloud" data-en="DevOps &amp; Cloud">DevOps &amp; Cloud</h3>
+          <div class="tags">
+            <span data-tech="docker"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.983 11.078h2.119a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.119a.185.185 0 0 0-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 0 0 .186-.186V3.574a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 0 0 .186-.186V6.29a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 0 0 .184-.186V6.29a.185.185 0 0 0-.185-.185H8.1a.185.185 0 0 0-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 0 0 .185-.186V6.29a.185.185 0 0 0-.185-.185H5.136a.186.186 0 0 0-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.118a.185.185 0 0 0-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 0 0 .184-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.185.185 0 0 0-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 0 0 .185-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.186.186 0 0 0-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 0 0 .184-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.185.185 0 0 0-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 0 0-.75.748 11.376 11.376 0 0 0 .692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 0 0 3.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288z"/></svg>Docker</span>
+            <span data-tech="linux"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm0 2.4a9.6 9.6 0 0 1 9.6 9.6 9.6 9.6 0 0 1-9.6 9.6A9.6 9.6 0 0 1 2.4 12 9.6 9.6 0 0 1 12 2.4zM8 8h2v8H8V8zm4 0h4v2h-2v6h-2V8z"/></svg>Linux</span>
+            <span data-tech="git"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"/></svg>Git</span>
+            <span data-tech="jenkins"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.79 17.117a.207.207 0 0 1-.186.295h-2.016a.211.211 0 0 1-.194-.126l-2.087-4.548-1.877 4.548a.213.213 0 0 1-.202.126H8.087a.208.208 0 0 1-.185-.297l3.085-7.474-3.078-7.44a.208.208 0 0 1 .187-.293h2.013a.212.212 0 0 1 .194.127l2.09 4.587 1.88-4.587a.212.212 0 0 1 .2-.127h2.02a.208.208 0 0 1 .186.294l-3.088 7.44 3.086 7.475z"/></svg>Jenkins</span>
+            <span data-tech="github"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>GitHub Actions</span>
+            <span data-tech="aws"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.763 10.036c0 .296-.147.67-.54.67-.353 0-.535-.353-.535-.67 0-.294.155-.668.547-.668.348 0 .528.347.528.668zm2.867-.53c-.269 0-.598.15-.598.653 0 .547.335.687.598.687.275 0 .598-.14.598-.687 0-.512-.323-.652-.598-.652zm3.64.13h2.516l-.01-.313-2.266.01-.24 2.086.064.064c.283-.154.644-.227 1.044-.227 1.394 0 2.397.751 2.397 2.154 0 1.375-1.006 2.174-2.434 2.174-1.339 0-2.135-.617-2.226-1.61h1.196c.098.542.542.85 1.046.85.685 0 1.098-.53 1.098-1.354 0-.85-.436-1.293-1.108-1.293-.34 0-.631.084-.846.226l-.194-.185.302-2.582z"/></svg>AWS</span>
+            <span>CI/CD</span>
+          </div>
+        </article>
+
+        <!-- IoT -->
+        <article class="glass-card skill-card">
+          <span class="skill-icon" aria-hidden="true">⌁</span>
+          <h3 data-fr="Systèmes distribués &amp; IoT" data-en="Distributed systems &amp; IoT">Systèmes distribués &amp; IoT</h3>
+          <div class="tags">
+            <span data-tech="mqtt"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M10.657 23.994h-9.45A1.212 1.212 0 0 1 0 22.788v-9.18h.071c5.784 0 10.504 4.65 10.586 10.386zm7.606 0h-4.045C14.135 16.246 7.795 9.977 0 9.942V6.038h.071c9.983 0 18.121 8.044 18.192 17.956zm4.53 0h-.97C21.754 12.071 11.995 2.407 0 2.372v-1.16C.025 1.212.53.71 1.145.71h21.648c.615 0 1.12.503 1.12 1.135v20.966c0 .628-.505 1.183-1.12 1.183z"/></svg>MQTT</span>
+            <span>Java RMI</span>
+            <span data-tech="json"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.043 23.968c.479-.004.953-.029 1.426-.094a11.805 11.805 0 0 0 3.146-.863 12.404 12.404 0 0 0 3.793-2.542 11.977 11.977 0 0 0 2.44-3.427 11.793 11.793 0 0 0 1.02-3.476C23.975 12.144 24 11.646 24 11.149c0-.499-.025-1-.074-1.494a11.81 11.81 0 0 0-1.028-3.462 12.037 12.037 0 0 0-2.44-3.426A12.394 12.394 0 0 0 16.666.224 11.805 11.805 0 0 0 13.52-.636C13.048-.7 12.57-.726 12.09-.73a12.322 12.322 0 0 0-3.457.48 11.863 11.863 0 0 0-3.85 1.958 12.1 12.1 0 0 0-2.66 2.79 11.865 11.865 0 0 0-1.65 3.57c-.16.55-.27 1.114-.334 1.681a12.05 12.05 0 0 0-.036 2.06 11.835 11.835 0 0 0 .55 2.85 12.02 12.02 0 0 0 1.62 3.05 12.13 12.13 0 0 0 2.79 2.65 11.9 11.9 0 0 0 3.55 1.63c.55.15 1.11.24 1.68.3a12.6 12.6 0 0 0 1.32.06z"/></svg>JSON</span>
+            <span>Supervision IoT</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ PROJETS ============ -->
+    <section id="projets" class="section">
+      <header class="section-header">
+        <span class="section-num">03</span>
+        <h2 class="section-title" data-fr="Projets" data-en="Projects">Projets</h2>
+        <p class="section-intro" data-fr="Applications, données, automatisation." data-en="Applications, data, automation.">Applications, données, automatisation.</p>
+      </header>
+
+      <div class="project-filters" role="group" aria-label="Filtrer les projets">
+        <button class="filter-button active" data-filter="all" aria-pressed="true" data-fr="Tous" data-en="All">Tous</button>
+        <button class="filter-button" data-filter="backend" aria-pressed="false" data-fr="Backend" data-en="Backend">Backend</button>
+        <button class="filter-button" data-filter="iot" aria-pressed="false" data-fr="IoT" data-en="IoT">IoT</button>
+        <button class="filter-button" data-filter="devops" aria-pressed="false" data-fr="DevOps" data-en="DevOps">DevOps</button>
+        <button class="filter-button" data-filter="web" aria-pressed="false" data-fr="Web" data-en="Web">Web</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+        <article class="glass-card project-card" data-category="iot backend devops">
+          <div class="project-top">
+            <span class="project-num">01</span>
+            <span class="project-type" data-fr="En cours" data-en="In progress">En cours</span>
+          </div>
+          <h3 data-fr="Plateforme de supervision IoT distribuée" data-en="Distributed IoT monitoring platform">Plateforme de supervision IoT distribuée</h3>
+          <p data-fr="Plateforme pour ingérer, stocker et exposer la télémétrie d'équipements simulés."
+             data-en="Platform to ingest, store and expose telemetry from simulated devices.">
+             Plateforme pour ingérer, stocker et exposer la télémétrie d'équipements simulés.
+          </p>
+          <ul class="project-points">
+            <li data-fr="Ingestion MQTT + stockage temporel" data-en="MQTT ingestion + time-series storage">Ingestion MQTT + stockage temporel</li>
+            <li data-fr="API REST FastAPI conteneurisée" data-en="Containerized FastAPI REST API">API REST FastAPI conteneurisée</li>
+            <li data-fr="Base pour alertes et supervision" data-en="Foundation for alerts and monitoring">Base pour alertes et supervision</li>
+          </ul>
+          <div class="tags">
+            <span data-tech="python"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11.914 0C5.82 0 6.2 2.656 6.2 2.656l.007 2.752h5.814v.826H3.9S0 5.789 0 11.969c0 6.18 3.403 5.963 3.403 5.963h2.03v-2.868s-.109-3.403 3.35-3.403h5.766s3.24.052 3.24-3.133V3.234S18.31 0 11.914 0zm-3.21 1.943a1.086 1.086 0 1 1 0 2.172 1.086 1.086 0 0 1 0-2.172z"/><path fill="currentColor" d="M12.086 24c6.094 0 5.714-2.656 5.714-2.656l-.007-2.752h-5.814v-.826h8.121S24 18.211 24 12.031c0-6.18-3.403-5.963-3.403-5.963h-2.03v2.868s.109 3.403-3.35 3.403H9.451s-3.24-.052-3.24 3.133v5.294S5.69 24 12.086 24zm3.21-1.943a1.086 1.086 0 1 1 0-2.172 1.086 1.086 0 0 1 0 2.172z"/></svg>Python</span>
+            <span data-tech="mqtt"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M10.657 23.994h-9.45A1.212 1.212 0 0 1 0 22.788v-9.18h.071c5.784 0 10.504 4.65 10.586 10.386zm7.606 0h-4.045C14.135 16.246 7.795 9.977 0 9.942V6.038h.071c9.983 0 18.121 8.044 18.192 17.956zm4.53 0h-.97C21.754 12.071 11.995 2.407 0 2.372v-1.16C.025 1.212.53.71 1.145.71h21.648c.615 0 1.12.503 1.12 1.135v20.966c0 .628-.505 1.183-1.12 1.183z"/></svg>MQTT</span>
+            <span data-tech="fastapi"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0C5.375 0 0 5.375 0 12s5.375 12 12 12 12-5.375 12-12S18.625 0 12 0zm.768 3.354l-1.82 1.7v-.001l4.11 3.84-4.11 3.84 1.82 1.7 5.797-5.54-5.797-5.539zM5.41 12.7l-1.82-1.7 5.798-5.54 1.82 1.7-4.11 3.84 4.11 3.84-1.82 1.7L5.41 12.7z"/></svg>FastAPI</span>
+            <span>TimescaleDB</span>
+            <span data-tech="docker"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.983 11.078h2.119a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.119a.185.185 0 0 0-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 0 0 .186-.186V3.574a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 0 0 .186-.186V6.29a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 0 0 .184-.186V6.29a.185.185 0 0 0-.185-.185H8.1a.185.185 0 0 0-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 0 0 .185-.186V6.29a.185.185 0 0 0-.185-.185H5.136a.186.186 0 0 0-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.118a.185.185 0 0 0-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 0 0 .184-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.185.185 0 0 0-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 0 0 .185-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.186.186 0 0 0-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 0 0 .184-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.185.185 0 0 0-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 0 0-.75.748 11.376 11.376 0 0 0 .692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 0 0 3.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288z"/></svg>Docker</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Tagarte/iot-supervision-platform" target="_blank" rel="noopener noreferrer">
+              <span data-fr="Dépôt GitHub" data-en="GitHub repository">Dépôt GitHub</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="glass-card project-card" data-category="web backend">
+          <div class="project-top">
+            <span class="project-num">02</span>
+            <span class="project-type" data-fr="Stage · 2024" data-en="Internship · 2024">Stage · 2024</span>
+          </div>
+          <h3 data-fr="Application de suivi commercial" data-en="Sales tracking application">Application de suivi commercial</h3>
+          <p data-fr="Application interne développée en stage pour le suivi des activités et performances."
+             data-en="Internal app developed during an internship to track activities and performance.">
+             Application interne développée en stage pour le suivi des activités et performances.
+          </p>
+          <ul class="project-points">
+            <li data-fr="Gestion des activités et performances" data-en="Activity and performance management">Gestion des activités et performances</li>
+            <li data-fr="Conception BDD relationnelle" data-en="Relational database design">Conception BDD relationnelle</li>
+            <li data-fr="Rapports automatisés + API REST" data-en="Automated reports + REST API">Rapports automatisés + API REST</li>
+          </ul>
+          <div class="tags">
+            <span data-tech="laravel"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.642 5.43a.364.364 0 0 1 .014.1v5.149c0 .135-.073.26-.189.326l-4.323 2.49v4.934a.378.378 0 0 1-.188.326L9.93 23.949a.316.316 0 0 1-.066.027c-.008.002-.016.008-.024.01a.348.348 0 0 1-.192 0c-.011-.002-.02-.008-.03-.012-.02-.008-.042-.014-.062-.025L.533 18.755a.376.376 0 0 1-.189-.326V2.974c0-.033.005-.066.014-.098.003-.012.01-.02.014-.032a.369.369 0 0 1 .023-.058c.004-.013.015-.022.023-.033l.033-.045c.012-.01.025-.018.037-.027.014-.012.027-.024.041-.034H.53L5.043.05a.375.375 0 0 1 .375 0L9.93 2.647h.002c.015.01.027.021.04.033.01.01.024.017.035.027.013.014.022.03.033.045.008.011.02.021.025.033.01.02.017.038.024.058.003.011.01.021.013.032.01.031.014.064.014.098v9.652l3.76-2.164V5.527c0-.033.004-.066.013-.098.003-.01.01-.02.013-.032a.487.487 0 0 1 .024-.06c.005-.011.015-.02.024-.032l.033-.045c.012-.01.025-.018.037-.027.014-.012.027-.023.041-.032h.001l4.513-2.598a.375.375 0 0 1 .375 0l4.513 2.598c.016.01.027.021.042.034.01.008.022.016.03.027.013.014.023.029.034.044.008.012.02.022.025.034.01.018.017.038.024.057.003.012.01.022.013.034z"/></svg>Laravel</span>
+            <span data-tech="php"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.01 10.207h-.944l-.515 2.648h.838q.744 0 1.242-.314.497-.314.68-.999.182-.677-.102-.999-.284-.336-1.199-.336z"/></svg>PHP</span>
+            <span data-tech="mysql"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333-.04-.047-.046-.094-.08-.14-.04-.067-.126-.1-.18-.153z"/></svg>MySQL</span>
+            <span>Bootstrap</span>
+            <span>REST</span>
+          </div>
+          <div class="project-links">
+            <span class="muted-link" data-fr="Réalisé en stage" data-en="Built during internship">Réalisé en stage</span>
+          </div>
+        </article>
+
+        <article class="glass-card project-card" data-category="web backend">
+          <div class="project-top">
+            <span class="project-num">03</span>
+            <span class="project-type" data-fr="Stage · 2023" data-en="Internship · 2023">Stage · 2023</span>
+          </div>
+          <h3 data-fr="Gestion documentaire administrative" data-en="Administrative document management">Gestion documentaire administrative</h3>
+          <p data-fr="Application web pour organiser et consulter les documents administratifs."
+             data-en="Web app to organize and browse administrative documents.">
+             Application web pour organiser et consulter les documents administratifs.
+          </p>
+          <ul class="project-points">
+            <li data-fr="Archivage et classification" data-en="Archiving and classification">Archivage et classification</li>
+            <li data-fr="Recherche multicritère" data-en="Multi-criteria search">Recherche multicritère</li>
+            <li data-fr="Suivi des dossiers" data-en="Case tracking">Suivi des dossiers</li>
+          </ul>
+          <div class="tags">
+            <span>Web</span>
+            <span>SQL</span>
+            <span data-fr="BDD relationnelle" data-en="Relational DB">BDD relationnelle</span>
+          </div>
+          <div class="project-links">
+            <span class="muted-link" data-fr="Réalisé en stage" data-en="Built during internship">Réalisé en stage</span>
+          </div>
+        </article>
+
+        <article class="glass-card project-card" data-category="devops">
+          <div class="project-top">
+            <span class="project-num">04</span>
+            <span class="project-type" data-fr="Labo DevOps" data-en="DevOps Lab">Labo DevOps</span>
+          </div>
+          <h3 data-fr="Pipeline CI/CD et déploiement" data-en="CI/CD pipeline and deployment">Pipeline CI/CD et déploiement</h3>
+          <p data-fr="Laboratoire autour de l'automatisation du cycle de livraison d'une app conteneurisée."
+             data-en="Lab about automating the delivery cycle of a containerized app.">
+             Laboratoire autour de l'automatisation du cycle de livraison d'une app conteneurisée.
+          </p>
+          <ul class="project-points">
+            <li data-fr="Git + Jenkins" data-en="Git + Jenkins">Git + Jenkins</li>
+            <li data-fr="Conteneurisation Docker" data-en="Docker containerization">Conteneurisation Docker</li>
+            <li data-fr="Déploiement Kubernetes" data-en="Kubernetes deployment">Déploiement Kubernetes</li>
+          </ul>
+          <div class="tags">
+            <span data-tech="docker"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.983 11.078h2.119a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.119a.185.185 0 0 0-.185.185v1.888c0 .102.083.185.185.185"/></svg>Docker</span>
+            <span data-tech="jenkins"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.79 17.117a.207.207 0 0 1-.186.295h-2.016a.211.211 0 0 1-.194-.126l-2.087-4.548-1.877 4.548a.213.213 0 0 1-.202.126H8.087a.208.208 0 0 1-.185-.297l3.085-7.474-3.078-7.44a.208.208 0 0 1 .187-.293h2.013a.212.212 0 0 1 .194.127l2.09 4.587 1.88-4.587a.212.212 0 0 1 .2-.127h2.02a.208.208 0 0 1 .186.294l-3.088 7.44 3.086 7.475z"/></svg>Jenkins</span>
+            <span data-tech="git"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"/></svg>Git</span>
+            <span>Kubernetes</span>
+            <span>CI/CD</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Tagarte/devops-lab" target="_blank" rel="noopener noreferrer">
+              <span data-fr="Dépôt GitHub" data-en="GitHub repository">Dépôt GitHub</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <p class="empty-state" id="emptyProjects" hidden data-fr="Aucun projet dans cette catégorie." data-en="No projects in this category.">Aucun projet dans cette catégorie.</p>
+    </section>
+
+    <!-- ============ EXPÉRIENCES ============ -->
+    <section id="experiences" class="section">
+      <header class="section-header">
+        <span class="section-num">04</span>
+        <h2 class="section-title" data-fr="Expériences" data-en="Experience">Expériences</h2>
+        <p class="section-intro" data-fr="Premières expériences en contexte professionnel." data-en="First professional experiences.">Premières expériences en contexte professionnel.</p>
+      </header>
+
+      <div class="timeline">
+        <article class="glass-card timeline-item">
+          <div class="timeline-date">AVR — JUIN 2024</div>
+          <div class="timeline-body">
+            <h3 data-fr="Stage développeur Full-Stack" data-en="Full-Stack developer internship">Stage développeur Full-Stack</h3>
+            <p class="timeline-place">Ménara Préfa · Marrakech</p>
+            <p data-fr="Développement d'une application interne de suivi commercial (Laravel, MySQL). Gestion des activités, suivi des performances, conception des données et rapports."
+               data-en="Built an internal sales tracking app (Laravel, MySQL). Activity management, performance tracking, data design and reporting.">
+               Développement d'une application interne de suivi commercial (Laravel, MySQL). Gestion des activités, suivi des performances, conception des données et rapports.
+            </p>
+            <div class="tags">
+              <span data-tech="laravel"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.642 5.43a.364.364 0 0 1 .014.1v5.149c0 .135-.073.26-.189.326l-4.323 2.49v4.934a.378.378 0 0 1-.188.326L9.93 23.949a.316.316 0 0 1-.066.027L.533 18.755a.376.376 0 0 1-.189-.326V2.974z"/></svg>Laravel</span>
+              <span data-tech="php"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.01 10.207h-.944l-.515 2.648h.838q.744 0 1.242-.314.497-.314.68-.999z"/></svg>PHP</span>
+              <span data-tech="mysql"><svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.77 18.695h-.927a50.854 50.854 0 0 0-.27-4.41z"/></svg>MySQL</span>
+              <span>API REST</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="glass-card timeline-item">
+          <div class="timeline-date">JUIL 2023</div>
+          <div class="timeline-body">
+            <h3 data-fr="Stage développeur Web" data-en="Web developer internship">Stage développeur Web</h3>
+            <p class="timeline-place">Direction Provinciale d'El Haouz · Tahnaout</p>
+            <p data-fr="Application de gestion documentaire : archivage, classification, recherche multicritère et suivi des dossiers."
+               data-en="Document management app: archiving, classification, multi-criteria search and case tracking.">
+               Application de gestion documentaire : archivage, classification, recherche multicritère et suivi des dossiers.
+            </p>
+            <div class="tags">
+              <span>Web</span>
+              <span>SQL</span>
+              <span data-fr="Gestion documentaire" data-en="Document management">Gestion documentaire</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ FORMATION ============ -->
+    <section id="formation" class="section">
+      <header class="section-header">
+        <span class="section-num">05</span>
+        <h2 class="section-title" data-fr="Formation" data-en="Education">Formation</h2>
+        <p class="section-intro" data-fr="Un parcours axé sur les fondamentaux et l'ingénierie." data-en="A path focused on computer science fundamentals and software engineering.">Un parcours axé sur les fondamentaux et l'ingénierie.</p>
+      </header>
+
+      <div class="education-list">
+        <article class="glass-card education-item current">
+          <div class="education-date">2025 — <span data-fr="Présent" data-en="Present">Présent</span></div>
+          <div>
+            <span class="education-status" data-fr="En cours" data-en="Ongoing">En cours</span>
+            <h3 data-fr="Master d'Excellence en Ingénierie Logicielle" data-en="Master of Excellence in Software Engineering">Master d'Excellence en Ingénierie Logicielle</h3>
+            <p>Université Ibn Zohr · Faculté des Sciences, Agadir</p>
+          </div>
+        </article>
+
+        <article class="glass-card education-item">
+          <div class="education-date">2024 — 2025</div>
+          <div>
+            <h3 data-fr="Licence d'Excellence en Ingénierie Logicielle" data-en="Bachelor of Excellence in Software Engineering">Licence d'Excellence en Ingénierie Logicielle</h3>
+            <p>Université Ibn Zohr · Agadir</p>
+            <span class="education-note" data-fr="Mention Bien" data-en="With honors">Mention Bien</span>
+          </div>
+        </article>
+
+        <article class="glass-card education-item">
+          <div class="education-date">2022 — 2024</div>
+          <div>
+            <h3 data-fr="DUT Informatique" data-en="University Diploma in Computer Science">DUT Informatique</h3>
+            <p>École Supérieure de Technologie · Guelmim</p>
+            <span class="education-note" data-fr="Mention Bien" data-en="With honors">Mention Bien</span>
+          </div>
+        </article>
+
+        <article class="glass-card education-item">
+          <div class="education-date">2021 — 2022</div>
+          <div>
+            <h3 data-fr="Baccalauréat Sciences Physiques" data-en="Baccalaureate in Physics">Baccalauréat Sciences Physiques</h3>
+            <p data-fr="Option français" data-en="French option">Option français</p>
+            <span class="education-note" data-fr="Mention Bien" data-en="With honors">Mention Bien</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section">
+      <header class="section-header">
+        <span class="section-num">06</span>
+        <h2 class="section-title" data-fr="Contact" data-en="Contact">Contact</h2>
+        <p class="section-intro" data-fr="Stage PFE, collaboration, ou juste discuter tech." data-en="Internship, collaboration, or just talking tech.">Stage PFE, collaboration, ou juste discuter tech.</p>
+      </header>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <a class="glass-card contact-card" href="mailto:abdessadektagarte1@gmail.com" id="emailCard">
+            <span class="contact-icon" aria-hidden="true">✉</span>
+            <div>
+              <small data-fr="E-mail" data-en="Email">E-mail</small>
+              <p>abdessadektagarte1@gmail.com</p>
+            </div>
+          </a>
+
+          <a class="glass-card contact-card" href="https://github.com/Tagarte" target="_blank" rel="noopener noreferrer">
+            <span class="contact-icon" aria-hidden="true">⌘</span>
+            <div>
+              <small>GitHub</small>
+              <p>github.com/Tagarte</p>
+            </div>
+            <span class="contact-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="glass-card contact-card" href="https://linkedin.com/in/abdessadek-tagarte-bb79a22a8" target="_blank" rel="noopener noreferrer">
+            <span class="contact-icon" aria-hidden="true">in</span>
+            <div>
+              <small>LinkedIn</small>
+              <p>linkedin.com/in/abdessadek-tagarte-bb79a22a8</p>
+            </div>
+            <span class="contact-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <form id="contactForm" class="glass-card contact-form" novalidate>
+          <h3 data-fr="Envoyer un message" data-en="Send a message">Envoyer un message</h3>
+
+          <div class="form-row">
+            <label for="name" data-fr="Nom" data-en="Name">Nom</label>
+            <input id="name" name="name" autocomplete="name" required minlength="2"
+                   data-placeholder-fr="Votre nom" data-placeholder-en="Your name"
+                   placeholder="Votre nom" aria-describedby="nameError">
+            <span class="field-error" id="nameError" role="alert"></span>
+          </div>
+
+          <div class="form-row">
+            <label for="email" data-fr="E-mail" data-en="Email">E-mail</label>
+            <input id="email" name="email" type="email" autocomplete="email" required
+                   data-placeholder-fr="vous@exemple.com" data-placeholder-en="you@example.com"
+                   placeholder="vous@exemple.com" aria-describedby="emailError">
+            <span class="field-error" id="emailError" role="alert"></span>
+          </div>
+
+          <div class="form-row">
+            <label for="subject" data-fr="Sujet" data-en="Subject">Sujet</label>
+            <input id="subject" name="subject" required minlength="3"
+                   data-placeholder-fr="Objet du message" data-placeholder-en="Message subject"
+                   placeholder="Objet du message" aria-describedby="subjectError">
+            <span class="field-error" id="subjectError" role="alert"></span>
+          </div>
+
+          <div class="form-row">
+            <label for="message" data-fr="Message" data-en="Message">Message</label>
+            <textarea id="message" name="message" rows="5" required minlength="10"
+                      data-placeholder-fr="Parlez-moi de votre besoin..." data-placeholder-en="Tell me about your needs..."
+                      placeholder="Parlez-moi de votre besoin..." aria-describedby="messageError"></textarea>
+            <span class="field-error" id="messageError" role="alert"></span>
+          </div>
+
+          <button class="btn btn-primary" type="submit">
+            <span data-fr="Préparer l'e-mail" data-en="Prepare email">Préparer l'e-mail</span>
+            <span aria-hidden="true">→</span>
+          </button>
+          <p class="form-feedback" id="formFeedback" role="status" aria-live="polite"
+             data-fr="Le formulaire prépare un e-mail ; aucun message n'est envoyé par ce site."
+             data-en="The form prepares an email; no message is sent by this site.">
+             Le formulaire prépare un e-mail ; aucun message n'est envoyé par ce site.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p data-fr="© 2026 Abdessadek Tagarte "
+       data-en="© 2026 Abdessadek Tagarte ">
+       © 2026 Abdessadek Tagarte
+    </p>
+    <a href="#accueil" data-nav>
+      <span data-fr="Retour au sommet" data-en="Back to top">Retour au sommet</span> ↑
+    </a>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Retour en haut">↑</button>
+</body>
+</html>
